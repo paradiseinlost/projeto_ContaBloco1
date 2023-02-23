@@ -11,16 +11,7 @@ public class Menu {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-	Conta conta1= new Conta(1234,234,1,"Bellatrix Lestrange",15000.0f);
-	conta1.visualizar();
-	System.out.println("\n\n\n");
-	conta1.sacar(11000.0f);
-	conta1.visualizar();
-    System.out.println("\n\n\n");
-	conta1.depositar(6500.0f);
-	conta1.visualizar();
 	
-System.out.println("\n\n\n");		
 								
     Conta_Corrente contaCorrente1= new Conta_Corrente(1234,234,1,"Bellatrix Lestrange",15000.0f,3000.0f);
     contaCorrente1.visualizar();
