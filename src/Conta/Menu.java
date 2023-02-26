@@ -5,7 +5,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Conta.controller.ContaController;
-import Conta.model.Conta;
 import Conta.model.Conta_Corrente;
 import Conta.model.Conta_Poupanca;
 import Conta.util.Cores;
@@ -18,9 +17,9 @@ public class Menu {
 	
 	Scanner leia = new Scanner (System.in);								
 	
-int opcao,numero,agencia,tipo,aniversario;	
+int opcao,numero,agencia,tipo,aniversario,numeroDestino;	
 String titular;
-float saldo,limite;
+float saldo,limite,valor;
 	
 System.out.println("\nCriar Contas\n");	
 
@@ -204,18 +203,65 @@ break;
 case 6:
 	
 	System.out.println("\nSaque ");
+	
+	System.out.println("\nDigite o numero da Conta : ");
+	numero=leia.nextInt();
+	
+	do {
+		System.out.println("\nDigite o valor do saque: ");
+		valor = leia.nextFloat();
+		
+	}while(valor<=0);
+	
+	contas.sacar(numero,valor);
+	
 keyPress();	
 break;
 
 case 7:
 	
 	System.out.println("\nDeposito ");
+	
+	
+	System.out.println("\nDigite o numero da Conta : ");
+	numero=leia.nextInt();
+	
+	do {
+		System.out.println("\nDigite o valor do deposito : ");
+		valor = leia.nextFloat();
+		
+	}while(valor<=0);
+	
+	contas.depositar(numero,valor);
+		
 keyPress();
 break;
 
 case 8:
 	
 	System.out.println("\nTransferência entre Contas ");
+	
+	System.out.println("\nDigite o numero da Origem : ");
+	numero=leia.nextInt();
+	
+	System.out.println("\nDigite o numero da Conta Destino : ");
+	numeroDestino=leia.nextInt();
+	
+	do {
+		System.out.println("\nDigite o valor de transferência : ");
+		valor = leia.nextFloat();
+		
+	}while(valor<=0);
+	
+	contas.transferir(numero,numeroDestino,valor);
+	
+	
+	
+	
+	
+	
+	
+	
 keyPress();
 break;
 
